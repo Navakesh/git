@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+class user{
+    static usercount=0;
+
+    constructor(username,password,email){
+        this.username=username;
+        this.password=password;
+        this.email=email;
+        user.usercount++;
+    }
+    print_numberOfusers(){
+        console.log(user.usercount)
+    }
+}
+function createNewStudents(){
+    const yash = new user("yash", "yash@gmail.com", '100000xbasbcjsa');
+    console.log(yash)
+    //yash.print_numberOfusers()
+    const user2 = new user("vaibhav", "vaibhav@gmail.com", '2cs0');
+    //user2.print_numberOfusers()
+    //yash.print_numberOfusers()
+    
+}
+createNewStudents()
+</script>
+</html>

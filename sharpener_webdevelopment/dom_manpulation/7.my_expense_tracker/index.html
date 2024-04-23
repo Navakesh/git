@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <form onsubmit="handleform(event)" class="mt-4 mx-auto" style="max-width: 400px;">
+    <div class="form-group">
+        <label for="amount">Expense Amount:</label>
+        <input type="number" class="form-control" id="amount" required>
+    </div>
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <input type="text" class="form-control" id="description" required>
+    </div>
+    <div class="form-group">
+        <label for="category">Category:</label>
+        <select class="form-control" id="category">
+            <option value="fuel">Fuel</option>
+            <option value="food">Food</option>
+            <option value="electricity">Electricity</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Expense</button>
+  </form>
+
+  <ul class="list-group mt-4 mx-auto" style="max-width: 400px;">
+    <!-- List items will be dynamically added here -->
+  </ul>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Bootstrap JS CDN (place this after jQuery) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Your custom JavaScript file -->
+    <script src="index.js"></script>
+</body>
+</html>

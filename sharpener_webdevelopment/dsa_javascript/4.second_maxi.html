@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>   
+</body>
+<script>
+var second_maxi=function(a){
+    let maxi=a[0];
+    let s_maxi=0;
+    for(let i=0;i<a.length;i++){
+        if(a[i]>maxi){
+            s_maxi=maxi;
+            maxi=a[i]
+        } else if(a[i]<maxi && a[i]>s_maxi){
+            s_maxi=a[i]
+        } 
+    }
+    return s_maxi
+}
+let b=[1,2,3,6,3,5]
+console.log(second_maxi(b))
+</script>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+var findmiddle=function(head){
+    var slowpointer=head;
+    var fastpointer=head;
+    while(fastpointer!==null && fastpointer.next!==null){
+        slowpointer=slowpointer.next;
+        fastpointer=fastpointer.next.next;
+    }
+    return slowpointer
+}  
+function Listnode(val,next){
+    return{
+        val:val,
+        next:next===undefined?null:next
+    }
+} 
+var node1=new Listnode(3)
+var node2=new Listnode(2,node1)
+var node3=new Listnode(5,node2)
+var node4=new Listnode(7,node3)
+var node5=new Listnode(8,node4)
+
+console.log(findmiddle(node5).val)
+</script>
+</html>

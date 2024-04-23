@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>   
+</body>
+<script>
+//constructor
+function person(firstname,lastname,age,sex){
+    this.firstname=firstname;
+    this.lastname=lastname;
+    this.age=age;
+    this.sex=sex;
+    this.printFullname=function(){
+        console.log(this.firstname,this.lastname)
+    }
+}
+//function eligible or not
+person.prototype.eligible_or_n=function(minage){
+    const eligible=this.age>=minage?'eligible':'not eligible';
+    console.log(eligible)
+}
+
+//to create objects
+function createstudents(){
+    person1=new person('yash','prasad',10,'male')
+    person2=new person('salar','mannar',22,'male')
+    console.log(person1)
+}
+createstudents()
+
+</script>
+</html>

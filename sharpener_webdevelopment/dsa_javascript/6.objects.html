@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+var objectfun=function(){
+    const person={
+        age:26,
+        firsName:"rocky",
+        lastName:'bhai',
+        hobbies:['music','sports','movies'],
+        addres:{
+            street:'50 main street',
+            city:'kgf',
+            state:'mumbai'
+        }
+    }
+    console.log(person.hobbies[2])
+    console.log(person.addres.state)
+
+    const{age,addres:{state}}=person
+    console.log(age)
+    console.log(state)
+    console.log(person)
+}
+objectfun()
+
+</script>
+</body>
+</html>

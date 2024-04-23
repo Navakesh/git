@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>    
+</body>
+<script>
+ class user{
+    static count=0;
+    constructor(username, email, age){
+        this.username = username;
+        this.email = email;
+        this.age = age;
+        user.count++
+    }
+    print_numberOusers(){
+        console.log(user.count)
+    }
+} 
+class member extends user{
+    constructor(username, email, age,){
+        super(username, email, age)
+        this.membershipdate = new Date(2024, 3, 15)
+        this.pack =''
+    }
+    purchasemembership(meberpack){
+        this.pack=meberpack
+        if(meberpack === "monthlypackage"){
+            this.membershipdate.setMonth(this.membershipdate.getMonth() + 1)
+        }else if (meberpack === 'fullyear'){
+            this.membershipdate.setFullYear(this.membershipdate.getFullYear() + 1)
+        }
+    }
+    subscriptionactive(){
+        console.log(`${this.username} is subscribed to ${this.pack} uptill ${this.membershipdate.toDateString()}`)
+    }
+}
+
+person = new member('lucky', 'email', 'age');
+console.log(person);
+person.purchasemembership('monthlypackage')
+person.subscriptionactive()
+</script>
+</html>

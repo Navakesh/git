@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>   
+</body>
+<script>
+function numJewelsInStones(jewels, stones) {
+    let count = 0;
+    let x="";
+    let stonesCount = {};
+    // Count the occurrence of each stone
+    for(let i = 0; i < stones.length; i++) {
+        let stone = stones[i];
+        if(stonesCount[stone]) {
+            stonesCount[stone]++;
+        } else {
+            stonesCount[stone] = 1;
+        }
+    }
+    // Sum up the count of jewels in stones
+    for(let j = 0; j < jewels.length; j++) {
+        let jewel = jewels[j];
+        
+        if(stonesCount[jewel]) {
+            count += stonesCount[jewel];
+            x=stonesCount[jewel]
+        }
+    }
+    return count;
+}
+// Test cases
+console.log(numJewelsInStones("aA", "aAAAbbbb")); // Output: 3
+console.log(numJewelsInStones("z", "ZZ")); // Output: 0
+
+</script>
+</html>

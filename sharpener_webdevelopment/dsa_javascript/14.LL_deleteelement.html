@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+var remove3rdlastElem = function(head) {
+    if (!head || !head.next || !head.next.next) {
+        printLinkList(head)
+    }    
+    var dummy = new Listnode(0);
+    dummy.next = head;
+    var first = dummy;
+    var second = dummy;
+    
+    for (let i = 1; i <= 3 + 1; i++) {
+        first = first.next;
+    }    
+    while (first != null) {
+        first = first.next;
+        second = second.next;
+    }  
+    second.next = second.next.next; 
+    printLinkList(head)
+};
+function printLinkList(head){
+    var current = head;
+    var linklistString = ''
+    while(current.next){
+      
+        linklistString = linklistString + current.val + '->'
+        current = current.next
+    }
+    linklistString = linklistString + current.val
+    console.log(linklistString)
+}
+
+function Listnode(val,next) {
+  return {
+    val: val,
+    next: next==undefined?null:next,
+  };
+}
+
+var node1=new Listnode(5)
+var node2=new Listnode(4,node1)
+var node3=new Listnode(3,node2)
+var node4=new Listnode(2,node3)
+var node5=new Listnode(1,node4)
+
+remove3rdlastElem(node5)
+</script>
+</html>
